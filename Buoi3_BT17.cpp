@@ -1,4 +1,8 @@
 #include <stdio.h>
+void in_gt(int a);
+void in_gt_chan(int a);
+void in_gt_chia_het_5(int a);
+void in_snt(int a);
 int kt_snt(int a);
 int tinh_tong(int a);
 int tong_le(int a);
@@ -14,33 +18,13 @@ int main()
 	scanf("%d",&n);
 	}while(n<=0||n>=100);
 	
-	printf(" Cac gia tri tu 1 den n: ");
-	for(int i=1;i<=n;i++)
-	{
-		printf("%d ",i);
-	}
+	in_gt(n);
 	
-	printf("\n Cac gia tri chan tu 1 den n: ");
-	for(int i=2;i<=n;i=i+2)
-	{
-		printf("%d ",i);
-	}
+	in_gt_chan(n);
 	
-	printf("\n Cac gia tri chia het cho 5 tu 1 den %d: ",n);
-	for(int i=1;i<=n;i++)
-	{
-		if(i%5==0)
-			printf("%d ",i);
-	}
+	in_gt_chia_het_5(n);
 	
-	printf("\n Cac so nguyen to nho hon %d: ",n);
-	for(int i=1;i<n;i++)
-	{
-		if(kt_snt(i)==1)
-		{
-			printf("%d ",i);
-		}
-	}
+	in_snt(n);
 		
 	printf("\n Tong cac gia tri tu 1 den %d: %d",n,tinh_tong(n));
 	
@@ -52,6 +36,42 @@ int main()
 	
 	printf("\n Trung binh cong cac so nguyen to nho hon %d: %.2f",n,tbc_snt(n));
 	return 0;
+}
+void in_gt(int a)
+{
+	printf(" Cac gia tri tu 1 den %d: ",a);
+	for(int i=1;i<=a;i++)
+	{
+		printf("%d ",i);
+	}
+}
+void in_gt_chan(int a)
+{
+	printf("\n Cac gia tri chan tu 1 den %d: ",a);
+	for(int i=2;i<=a;i=i+2)
+	{
+		printf("%d ",i);
+	}	
+}
+void in_gt_chia_het_5(int a)
+{
+	printf("\n Cac gia tri chia het cho 5 tu 1 den %d: ",a);
+	for(int i=1;i<=a;i++)
+	{
+		if(i%5==0)
+			printf("%d ",i);
+	}
+}
+void in_snt(int a)
+{
+	printf("\n Cac so nguyen to nho hon %d: ",a);
+	for(int i=1;i<a;i++)
+	{
+		if(kt_snt(i)==1)
+		{
+			printf("%d ",i);
+		}
+	}
 }
 int kt_snt(int a)
 {
