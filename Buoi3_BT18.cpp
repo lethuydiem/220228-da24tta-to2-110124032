@@ -55,22 +55,16 @@ int tong_cs_le(int a)
 }
 int kt_snt(int a)
 {
-	if(a==2)
-		return 1;
-	else if(a>2)
+	if(a<2)
+		return 0;
+	for(int j=2;j<a;j++)
 	{
-		for(int j=2;j<a;j++)
+		if(a%j==0)
 		{
-			if(a%j!=0)
-			{
-				return 1;
-			}
-			else
-				return 0;
+			return 0;//Co uoc so thu 3
 		}
 	}
-	else
-		return 0;
+	return 1;
 }
 int tong_cs_snt(int a)
 {
