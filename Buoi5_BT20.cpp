@@ -71,6 +71,7 @@ void NhapMang(float a[], int n)
 		scanf("%f",&a[i]);
 	}
 }
+
 void XuatMang(float a[], int n)
 {
 	printf("Xuat mang: ");
@@ -79,6 +80,7 @@ void XuatMang(float a[], int n)
 		printf("\t%.2f\t",a[i]);
 	}
 }
+
 float sum(float a[], int n)
 {
 	float s=0;
@@ -88,6 +90,7 @@ float sum(float a[], int n)
 	}
 	return s;
 }
+
 float TbcVtLe(float a[], int n)
 {
 	float s=0;
@@ -99,6 +102,7 @@ float TbcVtLe(float a[], int n)
 	}
 	return s/dem;
 }
+
 int DemDuong(float a[], int n)
 {
 	int dem=0;
@@ -109,6 +113,7 @@ int DemDuong(float a[], int n)
 	}
 	return dem;
 }
+
 void SxTang(float a[], int n)
 {
 	float t;
@@ -127,6 +132,7 @@ void SxTang(float a[], int n)
 	printf("\nMang sau khi sap xep tang:\n");
 	XuatMang(a,n);
 }
+
 void InGtVtLe(float a[], int n)
 {
 	printf("\nCac gia tri tai vi tri le:\t");
@@ -135,6 +141,7 @@ void InGtVtLe(float a[], int n)
 		printf("%.2f\t",a[i]);
 	}
 }
+
 void VtGt0(float a[], int n)
 {
 	printf("\nCac vi tri co gia tri 0 la:\t");
@@ -146,6 +153,7 @@ void VtGt0(float a[], int n)
 		}
 	}
 }
+
 void TimMax(float a[], int n)
 {
 	float m=a[0];
@@ -157,6 +165,7 @@ void TimMax(float a[], int n)
 	}
 	printf("%.2f",m);
 }
+
 int VtMaxDt(float a[], int n)
 {
 	float m=a[0];
@@ -171,6 +180,7 @@ int VtMaxDt(float a[], int n)
 	}
 	return vt;
 }
+
 void InVtMax(float a[], int n)
 {
 	printf("\nCac vi tri co gia tri lon nhat trong mang la:\t");
@@ -186,6 +196,7 @@ void InVtMax(float a[], int n)
 			printf("A[%d]\t",i);
 	}
 }
+
 int KtSoAm(float a[],int n)
 {
 	for(int i=0;i<n;i++)
