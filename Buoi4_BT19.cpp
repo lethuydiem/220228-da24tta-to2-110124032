@@ -75,26 +75,7 @@ int main()
 	
 	return 0;
 }
-int tongMang(int a[], int n)
-{
-	int tong = 0;
-	int i=0;
-	do
-	{
-		tong = tong + a[i];
-		i++;
-	}while(i<=n-1);
-	return tong;
-}
 
-void xuatMang(int a[], int n)
-{
-	int i;
-	for(i=0; i<=n-1; i++)
-	{
-		printf("%8d", a[i]);
-	}
-}
 void nhapMang(int a[], int n)
 {
 	int i;
@@ -107,6 +88,28 @@ void nhapMang(int a[], int n)
 		i++;
 	}
 }
+
+void xuatMang(int a[], int n)
+{
+	int i;
+	for(i=0; i<=n-1; i++)
+	{
+		printf("%8d", a[i]);
+	}
+}
+
+int tongMang(int a[], int n)
+{
+	int tong = 0;
+	int i=0;
+	do
+	{
+		tong = tong + a[i];
+		i++;
+	}while(i<=n-1);
+	return tong;
+}
+
 int tongDuong(int a[], int n)
 {
 	int s=0;
