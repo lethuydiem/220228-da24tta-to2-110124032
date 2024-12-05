@@ -50,8 +50,11 @@ void NhapPS(ps *a)
 {
 	printf("\nNhap vao tu so: ");
 	scanf("%d",&a->TuSo);
-	printf("Nhap vao mau so: ");
-	scanf("%d",&a->MauSo);
+	do
+	{
+		printf("Nhap vao mau so: ");
+		scanf("%d",&a->MauSo);
+	}while(a->MauSo!=0);
 }
 void XuatPS(ps a)
 {
