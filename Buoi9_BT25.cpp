@@ -67,7 +67,8 @@ int main() {
     return 0;
 }
 
-void Nhap(sv *a) {
+void Nhap(sv *a)
+{
     printf("Nhap ma so sinh vien: ");
     scanf("%s", a->mssv);
     
@@ -89,7 +90,7 @@ void Nhap(sv *a) {
     scanf("%d", &a->somon);
     
     for (int i = 0; i < a->somon; i++)
-	{
+    {
         printf("Nhap ma mon %d: ", i + 1);
         scanf("%s", a->mon[i].mamon);
         
@@ -107,7 +108,7 @@ void Xuat(sv a) {
     printf("\nSo mon: %d", a.somon);
     
     for (int i = 0; i < a.somon; i++) 
-	{
+    {
         printf("\nMa mon %d: %s\tDiem: %.2f", i + 1, a.mon[i].mamon, a.mon[i].diem);
     }
     printf("\n");
@@ -116,7 +117,7 @@ void Xuat(sv a) {
 int TimSV_ms(sv a[], int n, char ms[10]) 
 {
     for (int i = 0; i < n; i++) 
-	{
+    {
         if (strcmp(ms, a[i].mssv) == 0)
             return 1;
     }
@@ -128,9 +129,9 @@ int TimSV_ten(sv a[], int n, char ten[30])
     int found = 0;
     printf("Thong tin sinh vien co ten ban vua tim la:");
     for (int i = 0; i < n; i++) 
-	{
+    {
         if (strcmp(ten, a[i].hoten) == 0) 
-		{
+	{
             Xuat(a[i]);
             found++;
         }
@@ -142,9 +143,9 @@ void SV_sinhthang8(sv a[], int n)
 {
     printf("\n\nThong tin sinh vien sinh thang 8 la:");
     for (int i = 0; i < n; i++) 
-	{
+    {
         if (a[i].ngaysinh.thang == 8) 
-		{
+	{
             Xuat(a[i]);
         }
     }
@@ -155,9 +156,9 @@ int TimSV_gt(sv a[], int n, char gt[3])
     int found = 0;
     printf("Thong tin sinh vien co gioi tinh ban vua tim la:");
     for (int i = 0; i < n; i++) 
-	{
+    {
         if (strcmp(gt, a[i].gioitinh) == 0) 
-		{
+	{
             Xuat(a[i]);
             found++;
         }
@@ -170,9 +171,9 @@ int TimSV_dc(sv a[], int n, char dc[100])
     int found = 0;
     printf("Thong tin sinh vien co dia chi ban vua tim la:");
     for (int i = 0; i < n; i++) 
-	{
+    {
         if (strcmp(dc, a[i].diachi) == 0) 
-		{
+	{
             Xuat(a[i]);
             found++;
         }
