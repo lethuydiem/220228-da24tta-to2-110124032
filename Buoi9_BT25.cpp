@@ -47,9 +47,8 @@ int main() {
     
     char ten[30];
     printf("\n\nNhap ten sinh vien ban muon tim: ");
-    getchar();  
-    fgets(ten, sizeof(ten), stdin);
-    ten[strcspn(ten, "\n")] = 0;  
+    fflush(stdin);
+    gets(ten);
     printf("%d", TimSV_ten(a, n, ten));
     
     SV_sinhthang8(a, n);
@@ -61,9 +60,8 @@ int main() {
     
     char dc[100];
     printf("\n\nNhap dia chi ban muon tim: ");
-    getchar();  
-    fgets(dc, sizeof(dc), stdin);
-    dc[strcspn(dc, "\n")] = 0;  
+    fflush(stdin);
+    gets(dc);
     printf("%d", TimSV_dc(a, n, dc));
     
     return 0;
@@ -74,10 +72,9 @@ void Nhap(sv *a) {
     scanf("%s", a->mssv);
     
     printf("Nhap ho ten: ");
-    getchar();  
-    fgets(a->hoten, sizeof(a->hoten), stdin);
-    a->hoten[strcspn(a->hoten, "\n")] = 0;  
-    
+    fflush(stdin);
+    gets(a->hoten);
+
     printf("Nhap ngay sinh: ");
     scanf("%d %d %d", &a->ngaysinh.ngay, &a->ngaysinh.thang, &a->ngaysinh.nam);
     
@@ -85,9 +82,8 @@ void Nhap(sv *a) {
     scanf("%s", a->gioitinh);
     
     printf("Nhap dia chi: ");
-    getchar(); 
-    fgets(a->diachi, sizeof(a->diachi), stdin);
-    a->diachi[strcspn(a->diachi, "\n")] = 0;  
+    fflush(stdin);
+    gets(a->diachi);
     
     printf("Nhap so mon: ");
     scanf("%d", &a->somon);
@@ -117,38 +113,45 @@ void Xuat(sv a) {
     printf("\n");
 }
 
-int TimSV_ms(sv a[], int n, char ms[10]) {
-    for (int i = 0; i < n; i++) {
+int TimSV_ms(sv a[], int n, char ms[10]) 
+{
+    for (int i = 0; i < n; i++) 
+	{
         if (strcmp(ms, a[i].mssv) == 0)
             return 1;
     }
     return 0;
 }
 
-int TimSV_ten(sv a[], int n, char ten[30]) {
+int TimSV_ten(sv a[], int n, char ten[30]) 
+{
     int found = 0;
     printf("Thong tin sinh vien co ten ban vua tim la:");
     for (int i = 0; i < n; i++) 
 	{
-        if (strcmp(ten, a[i].hoten) == 0) {
+        if (strcmp(ten, a[i].hoten) == 0) 
+		{
             Xuat(a[i]);
-            found = 1;
+            found++;
         }
     }
     return found;
 }
 
-void SV_sinhthang8(sv a[], int n) {
-    printf("\nThong tin sinh vien sinh thang 8 la:");
+void SV_sinhthang8(sv a[], int n) 
+{
+    printf("\n\nThong tin sinh vien sinh thang 8 la:");
     for (int i = 0; i < n; i++) 
 	{
-        if (a[i].ngaysinh.thang == 8) {
+        if (a[i].ngaysinh.thang == 8) 
+		{
             Xuat(a[i]);
         }
     }
 }
 
-int TimSV_gt(sv a[], int n, char gt[3]) {
+int TimSV_gt(sv a[], int n, char gt[3]) 
+{
     int found = 0;
     printf("Thong tin sinh vien co gioi tinh ban vua tim la:");
     for (int i = 0; i < n; i++) 
@@ -156,13 +159,14 @@ int TimSV_gt(sv a[], int n, char gt[3]) {
         if (strcmp(gt, a[i].gioitinh) == 0) 
 		{
             Xuat(a[i]);
-            found = 1;
+            found++;
         }
     }
     return found;
 }
 
-int TimSV_dc(sv a[], int n, char dc[100]) {
+int TimSV_dc(sv a[], int n, char dc[100]) 
+{
     int found = 0;
     printf("Thong tin sinh vien co dia chi ban vua tim la:");
     for (int i = 0; i < n; i++) 
@@ -170,7 +174,7 @@ int TimSV_dc(sv a[], int n, char dc[100]) {
         if (strcmp(dc, a[i].diachi) == 0) 
 		{
             Xuat(a[i]);
-            found = 1;
+            found++;
         }
     }
     return found;
