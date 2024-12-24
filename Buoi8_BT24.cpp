@@ -54,7 +54,7 @@ void NhapPS(ps *a)
 	{
 		printf("Nhap vao mau so: ");
 		scanf("%d",&a->MauSo);
-	}while(a->MauSo!=0);
+	}while(a->MauSo==0);
 }
 void XuatPS(ps a)
 {
