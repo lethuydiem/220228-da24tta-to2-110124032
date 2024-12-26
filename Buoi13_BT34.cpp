@@ -1,6 +1,4 @@
-
 #include <stdio.h>
-#include <string.h>
 
 struct date {
     int ngay, thang, nam;
@@ -38,15 +36,16 @@ int main() {
     for (int i = 0; i < n; i++)
         Nhap(&a[i]);
     
-//    for (int i = 0; i < n; i++)
-//        Xuat(a[i]);
+    for (int i = 0; i < n; i++)
+        Xuat(a[i]);
+        
     GhivaoFile(a,n); 
     return 0;
 }
 
 void Nhap(LOP_HOC *a)
 {
-	printf("Nhap ma lop: ");
+	printf("\nNhap ma lop: ");
 	scanf("%s",a->malop);
 	printf("Nhap ten lop: ");
 	fflush(stdin);
@@ -56,7 +55,7 @@ void Nhap(LOP_HOC *a)
 	
 	for(int i=0;i<a->siso;i++)
 	{
-    	printf("Nhap ma so sinh vien: ");
+    	printf("\nNhap ma so sinh vien thu %d: ",i+1);
     	scanf("%s", a->SV[i].mssv);
     
     	printf("Nhap ho ten: ");
@@ -84,7 +83,6 @@ void Nhap(LOP_HOC *a)
         	printf("Nhap diem: ");
         	scanf("%f", &a->SV[i].mon[j].diem);
     	}
-    	printf("\n");
     }
 }
 
@@ -94,10 +92,10 @@ void Xuat(LOP_HOC a) {
 	printf("\nSi so: %d",a.siso);
 	for(int i=0;i<a.siso;i++)
 	{
-		printf("\nMSSV: %s\tTen: %s\t,Ngay sinh: %d/%d/%d\tGioi tinh: %s\tDiachi: %s\tSo mon: %d",a.SV[i].mssv,a.SV[i].hoten,a.SV[i].ngaysinh,a.SV[i].gioitinh,a.SV[i].diachi,a.SV[i].somon);
+		printf("\nMSSV: %s\tTen: %s\tNgay sinh: %d/%d/%d\tGioi tinh: %s\tDiachi: %s\nSo mon: %d",a.SV[i].mssv,a.SV[i].hoten,a.SV[i].ngaysinh.ngay,a.SV[i].ngaysinh.thang,a.SV[i].ngaysinh.nam,a.SV[i].gioitinh,a.SV[i].diachi,a.SV[i].somon);
 		for (int j = 0; j < a.SV[i].somon; j++) 
 		{
-        	printf("Ma mon %d: %s\tDiem: %.2f", j + 1, a.SV[i].mon[j].mamon, a.SV[i].mon[j].diem);
+        		printf("\tMa mon %d: %s\tDiem: %.2f", j + 1, a.SV[i].mon[j].mamon, a.SV[i].mon[j].diem);
 	   	}
 	}
     printf("\n");
@@ -121,4 +119,3 @@ void GhivaoFile(LOP_HOC a[], int n)
 		fwrite(&a[i], sizeof(LOP_HOC),1,f);
 	fclose(f);
 }
-
